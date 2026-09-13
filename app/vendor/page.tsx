@@ -1,18 +1,11 @@
+import styles from "./vendor.module.css";
+
 export const metadata = {
   title: "Vendor Registration | UNIRAS SDN. BHD.",
   description: "Corporate and procurement information for registering UNIRAS SDN. BHD. as a technology vendor.",
 };
 
-const categories = [
-  "Software Development",
-  "Application Development",
-  "Digital Product Engineering",
-  "Business Systems",
-  "System Integration",
-  "AI & Automation",
-  "Cloud & API Integration",
-];
-
+const categories = ["Software Development","Application Development","Digital Product Engineering","Business Systems","System Integration","AI & Automation","Cloud & API Integration"];
 const documents = [
   ["SSM company profile / registration documents", "Available upon request"],
   ["Tax and statutory information", "Available upon request, where applicable"],
@@ -22,50 +15,13 @@ const documents = [
 ];
 
 export default function VendorPage() {
-  return (
-    <main>
-      <header className="site-header shell">
-        <a className="brand" href="/" aria-label="UNIRAS home"><span className="brand-mark">U</span><span>UNIRAS</span></a>
-        <nav aria-label="Vendor page navigation"><a href="/">Company profile</a><span className="language-switch"><span className="active">EN</span><a href="/bm/vendor">BM</a></span></nav>
-      </header>
-
-      <section className="vendor-hero shell">
-        <div className="eyebrow">Procurement & Vendor Onboarding</div>
-        <h1>Vendor registration information.</h1>
-        <p>Key corporate information for procurement teams evaluating or onboarding UNIRAS SDN. BHD. as a technology vendor. Sensitive documents are supplied through an appropriate private channel rather than published on the public website.</p>
-      </section>
-
-      <section className="vendor-section shell">
-        <div className="section-kicker">Corporate information</div>
-        <div className="vendor-facts">
-          <div><span>Legal name</span><strong>UNIRAS SDN. BHD.</strong></div>
-          <div><span>Registration no.</span><strong>1478108T / 202201032411</strong></div>
-          <div><span>Entity</span><strong>Private limited company</strong></div>
-          <div><span>Country</span><strong>Malaysia</strong></div>
-          <div><span>Primary business</span><strong>Digital products, applications & business systems</strong></div>
-          <div><span>General contact</span><strong>hello@uniras.my</strong></div>
-        </div>
-      </section>
-
-      <section className="vendor-section vendor-soft">
-        <div className="shell">
-          <div className="section-kicker">Vendor categories</div>
-          <div className="vendor-heading"><h2>Technology services procurement can map clearly.</h2><p>Categories are written in common procurement language so UNIRAS can be classified consistently in vendor systems.</p></div>
-          <div className="vendor-tags">{categories.map((item) => <span key={item}>{item}</span>)}</div>
-        </div>
-      </section>
-
-      <section className="vendor-section shell">
-        <div className="section-kicker">Documents & compliance</div>
-        <div className="vendor-heading"><h2>Corporate documents available for due diligence.</h2><p>We do not publish banking, personal identification or confidential statutory information on the public website.</p></div>
-        <div className="document-list">{documents.map(([name,status]) => <div key={name}><strong>{name}</strong><span>{status}</span></div>)}</div>
-      </section>
-
-      <section className="vendor-section vendor-note">
-        <div className="shell vendor-note-inner"><div><div className="section-kicker">Procurement contact</div><h2>Need UNIRAS registered in your vendor system?</h2><p>Send the registration form, document checklist or procurement requirements. We will respond with the relevant corporate information through the appropriate channel.</p></div><a className="button primary" href="mailto:hello@uniras.my?subject=Vendor%20Registration%20-%20UNIRAS%20SDN.%20BHD.">Request vendor documents</a></div>
-      </section>
-
-      <footer className="footer shell"><div className="brand"><span className="brand-mark">U</span><span>UNIRAS</span></div><p>UNIRAS SDN. BHD.<br/>Registration No. 1478108T / 202201032411</p><p>Digital Products · Applications · Business Systems</p><p>© 2026 UNIRAS SDN. BHD.</p></footer>
-    </main>
-  );
+  return <main>
+    <header className="site-header shell"><a className="brand" href="/" aria-label="UNIRAS home"><span className="brand-mark">U</span><span>UNIRAS</span></a><nav aria-label="Vendor page navigation"><a href="/">Company profile</a><span className="language-switch"><span className="active">EN</span><a href="/bm/vendor">BM</a></span></nav></header>
+    <section className={`${styles.hero} shell`}><div className="eyebrow">Procurement & Vendor Onboarding</div><h1>Vendor registration information.</h1><p>Key corporate information for procurement teams evaluating or onboarding UNIRAS SDN. BHD. as a technology vendor. Sensitive documents are supplied through an appropriate private channel rather than published on the public website.</p></section>
+    <section className={`${styles.section} shell`}><div className="section-kicker">Corporate information</div><div className={styles.facts}><div><span>Legal name</span><strong>UNIRAS SDN. BHD.</strong></div><div><span>Registration no.</span><strong>1478108T / 202201032411</strong></div><div><span>Entity</span><strong>Private limited company</strong></div><div><span>Country</span><strong>Malaysia</strong></div><div><span>Primary business</span><strong>Digital products, applications & business systems</strong></div><div><span>General contact</span><strong>hello@uniras.my</strong></div></div></section>
+    <section className={`${styles.section} ${styles.soft}`}><div className="shell"><div className="section-kicker">Vendor categories</div><div className={styles.heading}><h2>Technology services procurement can map clearly.</h2><p>Categories are written in common procurement language so UNIRAS can be classified consistently in vendor systems.</p></div><div className={styles.tags}>{categories.map((item)=><span key={item}>{item}</span>)}</div></div></section>
+    <section className={`${styles.section} shell`}><div className="section-kicker">Documents & compliance</div><div className={styles.heading}><h2>Corporate documents available for due diligence.</h2><p>We do not publish banking, personal identification or confidential statutory information on the public website.</p></div><div className={styles.documents}>{documents.map(([name,status])=><div key={name}><strong>{name}</strong><span>{status}</span></div>)}</div></section>
+    <section className={`${styles.section} ${styles.note}`}><div className={`shell ${styles.noteInner}`}><div><div className="section-kicker">Procurement contact</div><h2>Need UNIRAS registered in your vendor system?</h2><p>Send the registration form, document checklist or procurement requirements. We will respond with the relevant corporate information through the appropriate channel.</p></div><a className="button primary" href="mailto:hello@uniras.my?subject=Vendor%20Registration%20-%20UNIRAS%20SDN.%20BHD.">Request vendor documents</a></div></section>
+    <footer className="footer shell"><div className="brand"><span className="brand-mark">U</span><span>UNIRAS</span></div><p>UNIRAS SDN. BHD.<br/>Registration No. 1478108T / 202201032411</p><p>Digital Products · Applications · Business Systems</p><p>© 2026 UNIRAS SDN. BHD.</p></footer>
+  </main>;
 }
