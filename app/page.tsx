@@ -1,21 +1,20 @@
 const capabilities = [
-  ["01", "Digital Product Engineering", "Web applications, PWAs, SaaS products and platform experiences designed around real operational workflows."],
-  ["02", "Business Systems", "Operational systems, vendor management, order workflows, marketplaces, internal tools and process automation."],
-  ["03", "AI & Automation", "AI-assisted workflows, generative systems, decision support and automation applied where they create measurable value."],
-  ["04", "Integration & Infrastructure", "APIs, payments, notifications, cloud delivery, authentication and third-party integrations."],
+  ["01", "Digital Product Engineering", "Web apps, PWAs and SaaS products engineered around real operating workflows."],
+  ["02", "Business Systems", "Operational systems, order flows, vendor management, internal tools and automation."],
+  ["03", "AI & Automation", "AI-assisted workflows and generative systems applied where they create measurable value."],
+  ["04", "Integration & Infrastructure", "APIs, payments, notifications, cloud delivery, identity and third-party integrations."],
 ];
 
-const products = [
-  { name: "LOOKAL", type: "Creative technology platform", status: "Operating product", body: "Structured, AI-assisted creative production for business communication and campaign workflows." },
-  { name: "EON", type: "Event Organizer Operating System", status: "Product development", body: "A unified operating workflow for organisers, vendors, applications, operations and event execution." },
-  { name: "ORDRE", type: "Commerce Order Operating System", status: "Product development", body: "An offline-first order engine designed to unify transactions across multiple commerce channels." },
-  { name: "ANGLR", type: "Digital fishing ecosystem", status: "Product development", body: "A platform combining fishing communities, evidence, tournaments and digital participation workflows." },
+const initiatives = [
+  { name: "EON", type: "Event Organizer Operating System", body: "Unified event, vendor and operating workflows." },
+  { name: "ORDRE", type: "Commerce Order Operating System", body: "Offline-first order execution across commerce channels." },
+  { name: "ANGLR", type: "Digital fishing ecosystem", body: "Community, evidence and tournament participation workflows." },
 ];
 
 const engagement = [
-  ["Custom Development", "Purpose-built applications and systems for a specific organisation, operational problem or workflow."],
+  ["Custom Development", "Purpose-built applications and systems for a specific organisation or operational problem."],
   ["Product Implementation", "Configure and deploy an existing UNIRAS product or reusable technology capability."],
-  ["Technology Partnership", "Continuous product development, modernisation, integration and technical stewardship."],
+  ["Technology Partnership", "Continuous product development, integration, modernisation and technical stewardship."],
 ];
 
 export default function Home() {
@@ -56,8 +55,8 @@ export default function Home() {
 
       <section className="section intro">
         <div className="shell intro-grid">
-          <div><div className="section-kicker">Company</div><h2>A technology company, not a generic software vendor.</h2></div>
-          <div className="intro-copy"><p>UNIRAS SDN. BHD. builds software around real business operations. We begin with the process, responsibilities, evidence and decisions a system must support — then engineer the digital product around that model.</p><p>Our work spans owned technology products and custom application development for organisations that need clearer workflows, stronger operational control and systems designed to evolve.</p></div>
+          <div><div className="section-kicker">Company</div><h2>Technology built around operations.</h2></div>
+          <div className="intro-copy"><p>UNIRAS SDN. BHD. builds software around real business operations. We start with the process, responsibilities and decisions a system must support, then engineer the digital product around that model.</p><p>Our work spans owned technology products and custom application development for organisations that need clearer workflows and systems designed to evolve.</p></div>
         </div>
       </section>
 
@@ -72,13 +71,23 @@ export default function Home() {
       <section className="section products-section" id="products">
         <div className="shell">
           <div className="section-kicker light">Products & technology initiatives</div>
-          <div className="section-heading light"><h2>We build products ourselves.</h2><p>Owned product work demonstrates our approach to domain modelling, operational workflows, product engineering and long-term system thinking.</p></div>
-          <div className="product-list">
-            {products.map((product, index) => (
-              <article className="product" key={product.name}>
-                <div className="product-index">0{index + 1}</div>
-                <div className="product-identity"><h3>{product.name}</h3><p className="product-type">{product.type}</p><span className="status-pill">{product.status}</span></div>
+          <div className="section-heading light"><h2>We build products ourselves.</h2><p>Owned product work demonstrates our approach to domain modelling, operational workflows and long-term product engineering.</p></div>
+
+          <article className="featured-product">
+            <div className="featured-product-top"><span className="status-pill active">Operating product</span><span className="product-index">01</span></div>
+            <div className="featured-product-grid">
+              <div><h3>LOOKAL</h3><p className="product-type">Creative technology platform</p></div>
+              <div><p>Structured, AI-assisted creative production for business communication and campaign workflows.</p><div className="product-proof"><span>Owned product</span><span>AI-assisted workflow</span><span>Production use</span></div></div>
+            </div>
+          </article>
+
+          <div className="initiative-list">
+            {initiatives.map((product, index) => (
+              <article className="initiative" key={product.name}>
+                <span className="product-index">0{index + 2}</span>
+                <div><h3>{product.name}</h3><p className="product-type">{product.type}</p></div>
                 <p>{product.body}</p>
+                <span className="status-pill">Product development</span>
               </article>
             ))}
           </div>
@@ -95,12 +104,12 @@ export default function Home() {
       </section>
 
       <section className="section trust-band">
-        <div className="shell trust-grid"><div><span className="trust-number">01</span><strong>Static-first where possible</strong><p>Keep public experiences fast, resilient and operationally simple.</p></div><div><span className="trust-number">02</span><strong>Cloud-native delivery</strong><p>Modern deployment, APIs and managed infrastructure selected to fit the system.</p></div><div><span className="trust-number">03</span><strong>Security by design</strong><p>Authentication, authorization, auditability and data boundaries considered from the start.</p></div></div>
+        <div className="shell trust-grid"><div><span className="trust-number">01</span><strong>Static-first where possible</strong><p>Fast, resilient public experiences with minimal operational overhead.</p></div><div><span className="trust-number">02</span><strong>Cloud-native delivery</strong><p>Modern deployment, APIs and managed infrastructure selected to fit the system.</p></div><div><span className="trust-number">03</span><strong>Security by design</strong><p>Identity, authorization, auditability and data boundaries considered from the start.</p></div></div>
       </section>
 
       <section className="section shell engagement">
         <div className="section-kicker">Engagement</div>
-        <div className="section-heading"><h2>Three ways to work with UNIRAS.</h2><p>Choose the engagement model that matches the problem, product maturity and ownership structure.</p></div>
+        <div className="section-heading"><h2>Three ways to work with UNIRAS.</h2><p>Choose the model that matches the operational problem, product maturity and ownership structure.</p></div>
         <div className="engagement-grid">{engagement.map(([title, body], i) => <div key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{body}</p></div>)}</div>
       </section>
 
