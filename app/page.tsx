@@ -6,6 +6,7 @@ const capabilities = [
 ];
 
 const initiatives = [
+  { name: "BORIGN", type: "Service Operating System", body: "A service lifecycle platform spanning demand, capability discovery, agreement, execution, evidence, completion and trust." },
   { name: "EON", type: "Event Organizer Operating System", body: "Unified event, vendor and operating workflows." },
   { name: "ORDRE", type: "Commerce Order Operating System", body: "Offline-first order execution across commerce channels." },
   { name: "ANGLR", type: "Digital fishing ecosystem", body: "Community, evidence and tournament participation workflows." },
