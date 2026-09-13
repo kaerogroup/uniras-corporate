@@ -34,6 +34,7 @@ export default function Home() {
           <a href="#capabilities">Capabilities</a>
           <a href="#products">Products</a>
           <a href="#approach">Approach</a>
+          <span className="language-switch" aria-label="Language"><span className="active">EN</span><a href="/bm">BM</a></span>
           <a href="#contact" className="nav-cta">Start a project</a>
         </nav>
       </header>
