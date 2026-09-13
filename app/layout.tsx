@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./product-cta.css";
 
 export const metadata: Metadata = {
   title: "UNIRAS SDN. BHD. | Digital Products, Applications & Business Systems",
