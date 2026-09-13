@@ -6,10 +6,10 @@ const capabilities = [
 ];
 
 const initiatives = [
-  { name: "BORIGN", type: "Service Operating System", body: "A service lifecycle platform spanning demand, capability discovery, agreement, execution, evidence, completion and trust." },
-  { name: "EON", type: "Event Organizer Operating System", body: "Unified event, vendor and operating workflows." },
-  { name: "ORDRE", type: "Commerce Order Operating System", body: "Offline-first order execution across commerce channels." },
-  { name: "ANGLR", type: "Digital fishing ecosystem", body: "Community, evidence and tournament participation workflows." },
+  { name: "BORIGN", type: "Service Operating System", body: "A service lifecycle platform spanning demand, capability discovery, agreement, execution, evidence, completion and trust.", url: "https://borign.com" },
+  { name: "EON", type: "Event Organizer Operating System", body: "Unified event, vendor and operating workflows.", url: "https://eon-platform.kaerogroup.workers.dev" },
+  { name: "ORDRE", type: "Commerce Order Operating System", body: "Offline-first order execution across commerce channels.", url: "https://ordre-pos.kaerogroup.workers.dev" },
+  { name: "ANGLR", type: "Digital fishing ecosystem", body: "Community, evidence and tournament participation workflows.", url: "https://anglr-platform.kaerogroup.workers.dev" },
 ];
 
 const engagement = [
@@ -78,7 +78,11 @@ export default function Home() {
             <div className="featured-product-top"><span className="status-pill active">Operating product</span><span className="product-index">01</span></div>
             <div className="featured-product-grid">
               <div><h3>LOOKAL</h3><p className="product-type">Creative technology platform</p></div>
-              <div><p>Structured, AI-assisted creative production for business communication and campaign workflows.</p><div className="product-proof"><span>Owned product</span><span>AI-assisted workflow</span><span>Production use</span></div></div>
+              <div>
+                <p>Structured, AI-assisted creative production for business communication and campaign workflows.</p>
+                <div className="product-proof"><span>Owned product</span><span>AI-assisted workflow</span><span>Production use</span></div>
+                <a className="product-cta" href="https://github.com/kaerogroup/lookal-platform" target="_blank" rel="noreferrer">Open LOOKAL <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
           </article>
 
@@ -88,7 +92,7 @@ export default function Home() {
                 <span className="product-index">0{index + 2}</span>
                 <div><h3>{product.name}</h3><p className="product-type">{product.type}</p></div>
                 <p>{product.body}</p>
-                <span className="status-pill">Product development</span>
+                <div className="initiative-actions"><span className="status-pill">Product development</span><a className="product-cta compact" href={product.url} target="_blank" rel="noreferrer">Open project <span aria-hidden="true">↗</span></a></div>
               </article>
             ))}
           </div>
