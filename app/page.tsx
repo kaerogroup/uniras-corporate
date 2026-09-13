@@ -81,7 +81,7 @@ export default function Home() {
               <div>
                 <p>Structured, AI-assisted creative production for business communication and campaign workflows.</p>
                 <div className="product-proof"><span>Owned product</span><span>AI-assisted workflow</span><span>Production use</span></div>
-                <a className="product-cta" href="https://github.com/kaerogroup/lookal-platform" target="_blank" rel="noreferrer">Open LOOKAL <span aria-hidden="true">↗</span></a>
+                <a className="product-cta" href="https://lookal.tech" target="_blank" rel="noreferrer">Open LOOKAL <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </article>
