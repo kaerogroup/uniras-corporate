@@ -4,9 +4,9 @@ import "./product-cta.css";
 import "./corporate-v2.css";
 
 export const metadata: Metadata = {
-  title: "UNIRAS SDN. BHD. | Digital Products, Applications & Business Systems",
+  title: "UNIRAS SDN. BHD.: Digital Products, Applications and Business Systems",
   description:
-    "UNIRAS SDN. BHD. is a Malaysian technology company building digital products, business applications, operational systems and AI-assisted workflows.",
+    "UNIRAS SDN. BHD. is a Malaysian technology company building digital products, business applications, operational systems and automation.",
   keywords: [
     "UNIRAS",
     "software development Malaysia",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "AI automation",
   ],
   openGraph: {
-    title: "UNIRAS SDN. BHD. | Digital Products, Applications & Business Systems",
+    title: "UNIRAS SDN. BHD.: Digital Products, Applications and Business Systems",
     description:
-      "Software built around how business actually works — digital products, applications and operational systems by UNIRAS SDN. BHD.",
+      "Software for real business operations, including digital products, applications and operational systems by UNIRAS SDN. BHD.",
     type: "website",
     locale: "en_MY",
     siteName: "UNIRAS SDN. BHD.",
