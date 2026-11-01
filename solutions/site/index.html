@@ -192,7 +192,7 @@ for(const [node,ms,en] of originalNodes){const trimmed=ms.trim();node.nodeValue=
 for(const [el,key,ms,en] of attrs)el.setAttribute(key,current==='en'?en:ms);
 const m=meta[current];document.title=m.title;
 for(const [selector,val] of [['meta[name="description"]',m.description],['meta[property="og:title"]',m.ogTitle],['meta[property="og:description"]',m.ogDescription]]){const el=document.querySelector(selector);if(el)el.content=val;}
-document.querySelectorAll('[data-language]').forEach(b=>{const active=b.dataset.language===current;b.setAttribute('aria-pressed',String(active));b.classList.toggle('active',active);});
+document.querySelectorAll('a[href^="/projek-"]').forEach(a=>{const url=new URL(a.href,location.origin);if(current==='en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');a.href=url.pathname+url.search;});document.querySelectorAll('[data-language]').forEach(b=>{const active=b.dataset.language===current;b.setAttribute('aria-pressed',String(active));b.classList.toggle('active',active);});
 if(updateUrl){const u=new URL(location.href);if(current==='en')u.searchParams.set('lang','en');else u.searchParams.delete('lang');history.replaceState(null,'',u.pathname+u.search+u.hash);}
 document.getElementById('wa-form')?.dispatchEvent(new Event('input',{bubbles:true}));}
 document.querySelectorAll('[data-language]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.language)));
