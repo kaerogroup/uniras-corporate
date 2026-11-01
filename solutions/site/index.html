@@ -50,7 +50,84 @@ h1 em{color:#172B3A}
 /* WhatsApp enquiry — industrial flat UI */
 .wa-trigger{cursor:pointer;font:inherit}.wa-trigger.textlink{background:transparent;border:0;color:inherit;padding:0;text-align:left;text-decoration:underline;text-underline-offset:4px}.wa-dialog{border:1px solid #c5cdd1;border-radius:4px;background:#f4f4f0;color:#222b30;box-shadow:0 20px 70px #08152045;width:min(94vw,570px);max-height:min(92dvh,900px);overflow:auto;padding:clamp(20px,4vw,30px)}.wa-dialog::backdrop{background:#0d1b27ba}.wa-head{display:flex;justify-content:space-between;gap:12px}.wa-head h2{font-size:clamp(25px,5vw,32px);line-height:1.16;margin:8px 0}.wa-head p{font-size:14px;line-height:1.5}.wa-close{border:1px solid #c5cdd1;background:white;color:#172b3a;width:36px;height:36px;font-size:26px;cursor:pointer;flex-shrink:0}.wa-form{margin-top:16px;display:grid;gap:18px}.wa-form fieldset{border:0;padding:0;min-width:0}.wa-form legend,.wa-field{font-weight:650;font-size:14px}.wa-options{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.wa-options label{border:1px solid #c5cdd1;background:#fff;padding:12px 8px;cursor:pointer;font-size:12px;line-height:1.4;display:flex;gap:6px;align-items:start}.wa-options label:has(input:checked){border-color:#172b3a;background:#e8edef}.wa-field{display:grid;gap:7px}.wa-field input,.wa-field textarea,.wa-field select{font:inherit;font-weight:400;width:100%;border:1px solid #aab5ba;background:white;border-radius:2px;padding:11px;color:#172b3a;min-height:44px}.wa-field textarea{resize:vertical}.wa-preview{background:#e8edef;padding:14px;border-left:3px solid #a94f22}.wa-preview strong{font-size:13px}.wa-preview p{white-space:pre-line;line-height:1.55;font-size:13px;margin:8px 0 0}.wa-send{width:100%;min-height:48px}.wa-note{font-size:12px;color:#52616a;line-height:1.45;margin:0}.wa-trigger:focus-visible,.wa-close:focus-visible,.wa-field :focus-visible{outline:3px solid #a94f22;outline-offset:3px}@media(max-width:430px){.wa-options{grid-template-columns:1fr}.wa-options label{padding:10px}.wa-dialog{max-height:94dvh}}
  .skip-link{position:absolute;left:10px;top:-60px;background:#fff;color:#172b3a;padding:10px 14px;z-index:9999}.skip-link:focus{top:10px}
-.lang-switch{display:inline-flex;align-items:center;gap:3px;margin-left:auto;border:1px solid #c5cdd1;padding:3px;background:#fff;flex-shrink:0}.lang-switch button{border:0;background:transparent;color:#52616a;min-width:40px;height:34px;font-weight:750;font-size:12px;cursor:pointer}.lang-switch button.active,.lang-switch button[aria-pressed="true"]{background:#172b3a;color:#fff}.lang-switch button:focus-visible{outline:2px solid #a94f22;outline-offset:2px}@media(max-width:550px){nav{gap:8px;height:67px}.brand{font-size:19px}.brand small{font-size:8px}.navcta{font-size:11px;min-height:40px;padding:8px 9px}.lang-switch{margin-left:auto}.lang-switch button{min-width:31px;height:30px}.hero{padding:33px 0 52px}h1{font-size:clamp(34px,9vw,43px)}.lead{font-size:16px;line-height:1.55}}</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"UNIRAS","url":"https://uniras.my"}</script></head><body><a class="skip-link" href="#top">Langkau ke kandungan</a>
+.lang-switch{display:inline-flex;align-items:center;gap:3px;margin-left:auto;border:1px solid #c5cdd1;padding:3px;background:#fff;flex-shrink:0}.lang-switch button{border:0;background:transparent;color:#52616a;min-width:40px;height:34px;font-weight:750;font-size:12px;cursor:pointer}.lang-switch button.active,.lang-switch button[aria-pressed="true"]{background:#172b3a;color:#fff}.lang-switch button:focus-visible{outline:2px solid #a94f22;outline-offset:2px}@media(max-width:550px){nav{gap:8px;height:67px}.brand{font-size:19px}.brand small{font-size:8px}.navcta{font-size:11px;min-height:40px;padding:8px 9px}.lang-switch{margin-left:auto}.lang-switch button{min-width:31px;height:30px}.hero{padding:33px 0 52px}h1{font-size:clamp(34px,9vw,43px)}.lead{font-size:16px;line-height:1.55}}
+/* v1.8 responsive refinement: mobile-first touch, desktop editorial design preserved */
+html{scroll-padding-top:90px}body{overflow-x:clip}
+img{max-width:100%}
+button,input,textarea,select{font-family:inherit}
+@media(min-width:851px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)}
+  .hero-photo{aspect-ratio:4/3}
+  .gallery{grid-template-columns:1.15fr .85fr .85fr}
+  .navlinks{display:flex}
+}
+@media(max-width:850px){
+  nav{gap:12px}
+  .brand{min-width:0}
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .hero{padding:45px 0 62px}
+  .hero-grid>.image-stack{width:100%;min-width:0}
+  .hero-photo{aspect-ratio:16/10}
+  .section{padding:68px 0}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-box{max-width:600px}
+  .service{padding:24px}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .photo{min-height:260px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:550px){
+  .wrap{width:calc(100% - 36px)}
+  .mini{padding:7px 12px;line-height:1.35;font-size:10px}
+  nav{height:65px;gap:8px}
+  .brand{font-size:19px;letter-spacing:0;white-space:nowrap}
+  .brand small{font-size:8px}
+  .navcta{display:none}
+  .lang-switch{margin-left:auto;gap:2px}
+  .lang-switch button{min-width:40px;min-height:40px}
+  .hero{padding:32px 0 48px}
+  .hero-grid{gap:26px}
+  .eyebrow{font-size:10px;letter-spacing:.08em;line-height:1.35}
+  h1{font-size:clamp(33px,9.1vw,44px);line-height:1.12;letter-spacing:-.042em;margin:15px 0}
+  .lead{font-size:16px;line-height:1.58;margin-bottom:19px}
+  .hero .actions{gap:9px}
+  .hero .actions .btn{flex:1 1 100%;min-height:48px}
+  .trust{margin-top:21px;padding-top:14px;font-size:12px;gap:7px}
+  .hero-photo{aspect-ratio:5/4;object-position:center}
+  .section{padding:56px 0}
+  .section-head{margin-bottom:24px}
+  .section-head h2{font-size:clamp(28px,7vw,35px);line-height:1.18;letter-spacing:-.03em}
+  .section-head p{line-height:1.62;font-size:14px}
+  .cards,.steps,.gallery{grid-template-columns:1fr;gap:12px}
+  .service{padding:22px}
+  .service h3{margin:14px 0 8px}
+  .service p{margin:0 0 17px;min-height:0}
+  .gallery .photo:first-child,.gallery .photo:nth-child(4){grid-column:auto}
+  .photo,.photo:first-child,.gallery .photo:nth-child(4),.gallery .photo:nth-child(5){min-height:250px}
+  .step{padding:21px}
+  .faq{gap:10px}
+  .faq details{padding:17px 0}
+  .faq summary{line-height:1.5}
+  .cta-band{padding:54px 0}
+  .cta-grid h2{font-size:clamp(28px,7vw,36px)}
+  .cta-box{padding:18px}
+  footer{padding:44px 0}
+  .sticky-mobile{padding:8px 12px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .sticky-mobile .btn{min-height:48px;font-size:13px;padding:10px 8px;line-height:1.25}
+  body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+  .wa-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 24px);padding:20px}
+  .wa-options{grid-template-columns:1fr}
+  .wa-options label{min-height:44px;align-items:center}
+  .wa-field input,.wa-field textarea,.wa-field select{font-size:16px}
+}
+@media(max-width:360px){
+  .wrap{width:calc(100% - 28px)}
+  .brand{font-size:17px}
+  .lang-switch button{min-width:36px}
+  h1{font-size:32px}
+  .sticky-mobile .btn{font-size:12px}
+}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"UNIRAS","url":"https://uniras.my"}</script></head><body><a class="skip-link" href="#top">Langkau ke kandungan</a>
 <div class="mini">UNIRAS BUSINESS SOLUTIONS <b>·</b> COLD ROOM & COMMERCIAL REFRIGERATION</div>
 <header><nav class="wrap" aria-label="Navigasi utama"><a class="brand" href="#top" aria-label="UNIRAS halaman utama"><span class="mark" aria-hidden="true">U</span><span>UNIRAS<small>Business Solutions</small></span></a><div class="navlinks"><a href="#servis">Servis</a><a href="#projek">Portfolio</a><a href="#proses">Cara Kami Bantu</a><a href="#faq">FAQ</a></div><div class="lang-switch" role="group" aria-label="Language / Bahasa"><button type="button" data-language="ms" aria-pressed="true" lang="ms">BM</button><button type="button" data-language="en" aria-pressed="false" lang="en">EN</button></div><a class="btn primary navcta" href="#hubungi">Minta Sebut Harga ↗</a></nav></header>
 <main id="top"><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow"><span class="dot"></span>Solusi penyejukan untuk perniagaan</span><h1>Pemasangan & Servis Cold Room. <em>Untuk operasi perniagaan.</em></h1><p class="lead">Perlukan pemasangan bilik sejuk, walk-in freezer atau servis sistem penyejukan? UNIRAS membantu memahami keperluan anda dan menyelaraskan sebut harga bersama rakan teknikal.</p><div class="actions"><a class="btn primary" href="https://form.jotform.com/263038832313049" target="_blank" rel="noopener noreferrer">Dapatkan Sebut Harga ↗</a><button type="button" class="wa-trigger btn secondary" data-service="general">WhatsApp UNIRAS</button></div><div class="trust"><span>Tiada pendaftaran diperlukan</span><span>Portfolio kerja rakan teknikal</span><span>Sebut harga mengikut spesifikasi</span></div></div><div class="image-stack"><img class="hero-photo" src="assets/1000922334.jpg" width="1000" height="800" fetchpriority="high" alt="Ruang cold storage komersial berskala besar dengan sistem evaporator"/><div class="floating"><strong>Solusi mengikut keadaan tapak</strong><p>Saiz bilik, suhu sasaran dan spesifikasi akan dinilai sebelum quotation.</p></div></div></div></section>
