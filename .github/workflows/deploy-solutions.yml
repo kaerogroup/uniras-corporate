@@ -27,6 +27,8 @@ jobs:
           test -d solutions/site/assets
           test -f solutions/site/robots.txt
           test -f solutions/site/sitemap.xml
+      - name: Validate SEO metadata, structured data and sitemap
+        run: node solutions/site/seo-audit.mjs
       - name: Upload ONLY Solutions site to existing Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
