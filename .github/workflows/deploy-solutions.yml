@@ -1,0 +1,36 @@
+name: Deploy UNIRAS Solutions (isolated)
+
+on:
+  push:
+    branches: [solutions-production]
+    paths:
+      - 'solutions/site/**'
+      - '.github/workflows/deploy-solutions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uniras-solutions-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: solutions-production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify isolated static site
+        run: |
+          test -f solutions/site/index.html
+          test -d solutions/site/assets
+          test -f solutions/site/robots.txt
+          test -f solutions/site/sitemap.xml
+      - name: Upload ONLY Solutions site to existing Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy solutions/site --project-name=uniras-solution --branch=main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
