@@ -65,6 +65,15 @@ document.addEventListener('click',e=>{
 document.addEventListener('submit',e=>{
  if(e.target instanceof Element && e.target.id==='wa-form')track('whatsapp_click',{interaction:'prepared_message'});
 },true);
-document.addEventListener('click',e=>{const el=e.target instanceof Element?e.target:null;if(el?.closest('[data-uniras-analytics-settings]')){e.preventDefault();consent(true)}});
+document.addEventListener('click',e=>{
+ const el=e.target instanceof Element?e.target:null;
+ const choice=el?.closest('[data-uniras-consent-choice]')?.getAttribute('data-uniras-consent-choice');
+ if(choice==='granted'||choice==='denied'){
+  e.preventDefault();choose(choice);
+  document.querySelectorAll('[data-uniras-consent-status]').forEach(x=>x.textContent=choice==='granted'?'Analitik dibenarkan.':'Analitik ditolak. Tiada data analitik baharu akan dihantar selepas halaman dimuat semula.');
+  return;
+ }
+ if(el?.closest('[data-uniras-analytics-settings]')){e.preventDefault();consent(true)}
+});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>consent(),{once:true});else consent();
 })();
