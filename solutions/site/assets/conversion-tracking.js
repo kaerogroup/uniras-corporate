@@ -30,13 +30,15 @@ function choose(value){
  try{localStorage.setItem(storageKey,value)}catch(e){/* storage unavailable */}
  if(value==='granted')start();
  document.getElementById('uniras-analytics-consent')?.remove();
+ if(value==='denied'&&enabled)location.reload();
 }
-function consent(){
+function consent(force=false){
  if(!valid)return;
  let choice=null;
  try{choice=localStorage.getItem(storageKey)}catch(e){}
- if(choice==='granted'){start();return}
- if(choice==='denied')return;
+ if(choice==='granted'&&!force){start();return}
+ if(choice==='denied'&&!force)return;
+ if(document.getElementById('uniras-analytics-consent'))return;
  const bar=document.createElement('aside');
  bar.id='uniras-analytics-consent';
  bar.setAttribute('aria-label','Pilihan analitik laman');
@@ -63,5 +65,6 @@ document.addEventListener('click',e=>{
 document.addEventListener('submit',e=>{
  if(e.target instanceof Element && e.target.id==='wa-form')track('whatsapp_click',{interaction:'prepared_message'});
 },true);
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',consent,{once:true});else consent();
+document.addEventListener('click',e=>{const el=e.target instanceof Element?e.target:null;if(el?.closest('[data-uniras-analytics-settings]')){e.preventDefault();consent(true)}});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>consent(),{once:true});else consent();
 })();
