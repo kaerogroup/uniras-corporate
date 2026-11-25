@@ -1,6 +1,4 @@
 import type { MetadataRoute } from "next";
-export const dynamic = "force-static";
-export default function sitemap(): MetadataRoute.Sitemap {
- const base = "https://www.uniras.my";
- return ["", "/bm", "/vendor", "/services/website-development", "/bm/services/website-development"].map(path => ({url: base + (path || "/")}));
-}
+import {serviceSlugs} from "./services/catalog";
+export const dynamic="force-static";
+export default function sitemap(): MetadataRoute.Sitemap {const base="https://www.uniras.my";const paths=["/","/bm","/vendor","/services","/bm/services",...["website-development",...serviceSlugs].flatMap(s=>["/services/"+s,"/bm/services/"+s])];return paths.map(path=>({url:base+path}));}
