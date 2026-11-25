@@ -1,6 +1,7 @@
 import styles from "./vendor.module.css";
 
 export const metadata = {
+  alternates: {canonical:"/vendor"},
   title: "Vendor Registration | UNIRAS SDN. BHD.",
   description: "Corporate and procurement information for registering UNIRAS SDN. BHD. as a technology vendor.",
 };

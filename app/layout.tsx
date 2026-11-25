@@ -4,6 +4,7 @@ import "./product-cta.css";
 import "./corporate-v2.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.uniras.my"),
   title: "UNIRAS SDN. BHD.: Digital Products, Applications and Business Systems",
   description:
     "UNIRAS SDN. BHD. is a Malaysian technology company building digital products, business applications, operational systems and automation.",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-MY">
-      <body>{children}</body>
+      <body><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.uniras.my/#organization","name":"UNIRAS SDN. BHD.","url":"https://www.uniras.my/","email":"uniras.capital@gmail.com","identifier":"202201032411"},{"@type":"WebSite","@id":"https://www.uniras.my/#website","url":"https://www.uniras.my/","name":"UNIRAS","publisher":{"@id":"https://www.uniras.my/#organization"},"inLanguage":["en-MY","ms-MY"]}]})}}/>{children}</body>
     </html>
   );
 }
